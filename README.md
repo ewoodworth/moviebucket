@@ -21,11 +21,12 @@ e. Rating [integer; value between 1 and 5]
 # The Stack What/Why
 
 ## Flow
-- Database
-- Backend/API
-- Frontend
+### Database
+### Backend/API
+### Frontend
 
 ## Infra
+### Auth
 - User/Pass is quick to setup but becomes yet one more thing to maintain which means it will break and it will be your fault. (will instantiate w/this, but aim to use OAuth asap)
 - OAuth is a bigger pain initially but more robust in the long run
   - MVP: You get to look at your own records sharing is no-one or everyone
