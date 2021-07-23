@@ -36,4 +36,5 @@ e. Rating [integer; value between 1 and 5]
 - Docker
 
 # Deploy to Production
+No sense re-inventing the wheel. Someone wrote this article: https://medium.com/@abhishekmeena_68076/how-to-deploy-the-flask-django-app-on-aws-ec2-with-gunicorn-ngnix-with-free-ssl-certificate-566b2ada3b6a and I'll probably do these things because I'd need a good reason to get creative with the basic infrastructure. "Creative" usually just means "hard to maintain or collaborate on"
 - AWS
