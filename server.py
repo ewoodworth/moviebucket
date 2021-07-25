@@ -1,5 +1,8 @@
+import configparser
 from flask import Flask
+from flask_session import Session
 import logging
+import os
 
 logger = logging.getLogger(__name__)
 
@@ -12,6 +15,15 @@ app = Flask(__name__, instance_relative_config=True)
 app.secret_key = config.get('FLASK', 'secret_key')
 app.config['SECRET_KEY'] = config.get('FLASK', 'secret_key')
 SECRET_KEY = config.get('FLASK', 'secret_key')
+
+def create_app():
+    # create and configure the app
+    app.config['SESSION_TYPE'] = 'filesystem'
+    #logging.getLogger("ncclient.transport.ssh").setLevel(logging.WARNING)
+    Session(app)
+    #login_manager.init_app(app)
+    # FUTURE HOME OF LOGIN STUFF
+    return app
 
 # It's a route
 @app.route("/")
