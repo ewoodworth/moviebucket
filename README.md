@@ -22,8 +22,12 @@ e. Rating [integer; value between 1 and 5]
 
 ## Flow
 ### Database
+- Postgresql: Versitle, powerful, scaleable, free. We don't need anything exotic or domain-specific for the tasks in the MVP
 ### Backend/API
+- Python/Flask: Familiar, Flask also is SUPER well documented for database interactions and less overhead than Django
 ### Frontend
+- MVP: Curl commands
+- Eventually: React or somesuch. React + OAuth is a better user experience and safer than trying to keep track of whether you scrubbed your variables properly and stored your login credentials safely for Javascript/AJAX.
 
 ## Infra
 ### Auth
