@@ -4,6 +4,7 @@ from flask_session import Session
 import logging
 import os
 
+logging.basicConfig(format='%(name)s %(asctime)s %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # manage secrets/config elements
@@ -25,24 +26,49 @@ def create_app():
     # FUTURE HOME OF LOGIN STUFF
     return app
 
+def create():
+    '''
+    Create a movie record
+    '''
+    return
+
+def list():
+    '''
+    List all movie records
+    '''
+    return
+
+def update():
+    '''
+    Update fields on a movie record
+    '''
+    return
+
+def delete():
+    '''
+    Delete a movie record
+    '''
+    return
+
 # It's a route
 @app.route("/")
 def root():
+    return("Welcome to the whole domain!")
+
+@app.route("/moviebucket")
+def moviebucket():
     return("Welcome to Moviebucket!")
 
 # Context conditionals
 if __name__ == "__main__":
     # We have to set debug=True here, since it has to be True at the point
     # that we invoke the DebugToolbarExtension
-    logging.basicConfig(format='%(name)s %(asctime)s %(message)s', level=logging.INFO)
-    logging.getLogger("ncclient.transport.ssh").setLevel(logging.WARNING)
+    # logging.getLogger("ncclient.transport.ssh").setLevel(logging.WARNING)
+    logger.info("App is running from %s" % __name__)
     app = create_app()
     app.debug = True
     PORT = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', debug=True, port=PORT, use_reloader=False)
     logger.info("server.py is being run directly")
 else:
-    # initialize logger if this file is being imported.
-    # if the file is being run directly (above) logger
-    # will be initialized in create_app
     app = create_app()
