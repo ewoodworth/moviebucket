@@ -26,6 +26,30 @@ def create_app():
     # FUTURE HOME OF LOGIN STUFF
     return app
 
+def create():
+    '''
+    Create a movie record
+    '''
+    return
+
+def list():
+    '''
+    List all movie records
+    '''
+    return
+
+def update():
+    '''
+    Update fields on a movie record
+    '''
+    return
+
+def delete():
+    '''
+    Delete a movie record
+    '''
+    return
+
 # It's a route
 @app.route("/")
 def root():
