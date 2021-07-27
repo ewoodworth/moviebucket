@@ -59,6 +59,46 @@ def root():
 def moviebucket():
     return("Welcome to Moviebucket!")
 
+# TODO Pretty sure this is *not* how to nest everything under a subdomain... look that up
+@app.route("/moviebucket/list_movies")
+def list_movies():
+    """
+    List all movies
+    If time add a letter of the alphabet flag
+    """
+    return
+
+@app.route("/moviebucket/list_my_movies")
+def list_my_movies():
+    """
+    List movies scored by logged in user
+    """
+    return
+
+@app.route("/moviebucket/delete_movie")
+def delete_movie(movie_id):
+    """
+    Delete a movie record if the user is also the record creator
+    """
+    return
+
+@app.route("/moviebucket/add_movie")
+def add_movie():
+    """
+    Add a movie record
+    """
+    return
+
+@app.route("/moviebucket/movie_detail")
+def movie_detail(movie_id):
+    """
+    From a movie id, return the move and all it's 
+    fields, set up session such that movie can be scored, 
+    edited or deleted
+    """
+    return
+
+
 # Context conditionals
 if __name__ == "__main__":
     # We have to set debug=True here, since it has to be True at the point
