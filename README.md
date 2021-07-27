@@ -36,8 +36,15 @@ e. Rating [integer; value between 1 and 5]
   - MVP: You get to look at your own records sharing is no-one or everyone
   - Eventually: Share records with select users/groups of users
 
-# Setup a Dev Environment
-- Docker
+# Setup an EC2 Instance
+## Locally
+- stick the aws generated keypair in the local dir IMMEDIATELY
+- ssh in
+## On the EC2
+- sudo apt update
+- sudo apt install python3-venv
+- python3 -m venv venv
+- source venv/bin/activate
 
 # Deploy to Production
 No sense re-inventing the wheel. Someone wrote this article: https://medium.com/@abhishekmeena_68076/how-to-deploy-the-flask-django-app-on-aws-ec2-with-gunicorn-ngnix-with-free-ssl-certificate-566b2ada3b6a and I'll probably do these things because I'd need a good reason to get creative with the basic infrastructure. "Creative" usually just means "hard to maintain or collaborate on"
