@@ -1,0 +1,9 @@
+cachelib
+certifi
+click
+Flask
+Flask-Session
+itsdangerous
+Jinja2
+MarkupSafe
+Werkzeug

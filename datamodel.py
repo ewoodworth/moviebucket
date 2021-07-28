@@ -1,3 +1,4 @@
+
 from .moviebucket import app, config
 import configparser
 from flask_sqlalchemy import SQLAlchemy
@@ -6,6 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 config = configparser.ConfigParser()
 config.read(os.environ.get('CONFIG_FILE', './config.ini'))
+
 
 app.config['SQLALCHEMY_DATABASE_URI'] = (
     f'postgresql+psycopg2://{config.get('PRODUCTION_DB', 'username')}:' +
@@ -63,6 +65,7 @@ class User(db.Model):
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+
 
 
     def __repr__(self):
