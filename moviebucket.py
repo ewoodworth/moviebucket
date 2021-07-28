@@ -9,7 +9,9 @@ logger = logging.getLogger(__name__)
 
 # manage secrets/config elements
 config = configparser.ConfigParser()
-config.read(os.environ.get('NETWORKING_CONFIG_FILE', './config.ini'))
+
+config.read(os.environ.get('CONFIG_FILE', './config.ini'))
+
 
 # set up Flask odds and ends
 app = Flask(__name__, instance_relative_config=True)
