@@ -38,6 +38,9 @@ Open the virtual environment of your choice, I'm using conda but Python's virtua
 
 > pip install -r requirements.txt
 
+> ansible-vault decrypt config.ini
+- You'll need the decryption key for this
+
 > python3 moviebucket.py
 
 You should see something like this, make note of that IP address where it says "Running on IP ADDRESS"
