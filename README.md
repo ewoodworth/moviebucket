@@ -22,6 +22,30 @@ e. Rating [integer; value between 1 and 5]
 
 This leaves a lot of the code untested. Gnereally the data model as described should meet the data gathering and authentication requirements (2, 4) THe Flask app should meet the functional requirements (1) and serve content over http (3) The integration errors prevent any component from actually* working.
 
+# Local Development/Testing
+
+Open a Terminal Window
+
+> git clone git@github.com:ewoodworth/moviebucket.git
+
+> cd moviebucket
+
+Open the virtual environment of your choice, I'm using conda but Python's virtualenv setup is easier to describe.
+
+> python3 venv venv
+
+> source venv/bin/activate
+
+> pip install -r requirements.txt
+
+> python3 moviebucket.py
+
+You should see something like this, make note of that IP address where it says "Running on IP ADDRESS"
+ 
+<img width="687" alt="Screen Shot 2021-07-29 at 8 47 24 AM" src="https://user-images.githubusercontent.com/2160448/127523572-f3699a5d-e1ae-4ab1-907d-d97449a5c372.png">
+
+In a seperate Terminal windo, one can interact with the local server vis curl
+
 # Deploy to Production
 Initial Setup Per this Tutorial: https://medium.com/@abhishekmeena_68076/how-to-deploy-the-flask-django-app-on-aws-ec2-with-gunicorn-ngnix-with-free-ssl-certificate-566b2ada3b6a
 
