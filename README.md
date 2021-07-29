@@ -15,17 +15,20 @@ e. Rating [integer; value between 1 and 5]
 3. The service must be accessible over http. You can implement an API, a command line interface (curl, node, etc.) and/or a basic web-based GUI.
 4. Add an authentication method to restrict access to the service.
 
-## Eventually
-1. Sophisitcated Authorization
-2. Dockerize the dev environment
+### MVP Notes:
+2 infrastructure gaps that mean failute to meet mvp. 
+1 - gunicorn isn't serving the Flask app off the EC2 instance 
+2 - SQLAlchemy fails to instantiate the RDS database on a (very mysterious) failure to authenticate. 
 
+This leaves a lot of the code untested. Gnereally the data model as described should meet the data gathering and authentication requirements (2, 4) THe Flask app should meet the functional requirements (1) and serve content over http (3) The integration errors prevent any component from actually* working.
 
 # Deploy to Production
 Initial Setup Per this Tutorial: https://medium.com/@abhishekmeena_68076/how-to-deploy-the-flask-django-app-on-aws-ec2-with-gunicorn-ngnix-with-free-ssl-certificate-566b2ada3b6a
 
 - ssh to EC2 CLI
-- git pull
-- pip install -r requirements.txt
+> git pull
+> pip install -r requirements.txt
+> ansible-vault decrypt config.ini
 
 # The Stack What/Why
 
@@ -44,18 +47,4 @@ Initial Setup Per this Tutorial: https://medium.com/@abhishekmeena_68076/how-to-
 - OAuth is a bigger pain initially but more robust in the long run
   - MVP: You get to look at your own records sharing is no-one or everyone
   - Eventually: Share records with select users/groups of users
-
-# Setup an EC2 Instance (notes I wish I'd taken last time I did this)
-## Locally
-- stick the aws generated keypair in the local dir IMMEDIATELY
-- ssh in
-## On the EC2
-- sudo apt update
-- sudo apt install python3-venv
-- python3 -m venv venv
-- source venv/bin/activate
-- ssh-keygen
-- Move pub key to GitHub instance with tag as EC2 usecase
-- git clone git@github.com:ewoodworth/moviebucket.git
-- sudo apt install gunicorn3
 
