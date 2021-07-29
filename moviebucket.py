@@ -160,7 +160,7 @@ def list_movies():
 def delete_movie(movie_id):
     """
     Delete a movie record if the user is also the record creator
-    curl -X DELETE "ip-address/delete_movie" -H "accept: application/json" -H "username:admin" -H "password:foo"
+    curl -X DELETE "http://ip-address/delete_movie" -H "accept: application/json" -H "username:admin" -H "password:foo"
     """
     username = request.headers['username']
     password = request.headers['password']    
@@ -181,7 +181,7 @@ def delete_movie(movie_id):
 def update_movie(id):
     """
     Add a movie record
-    curl -X PUT "http://192.168.42.6:5000/add_movie" -H "accept: application/json" -H "Content-Type: application/json" -H "username:admin" -H "password:foo" -d "{\"title\": \"THE_TITLE\",\"format\": \"FORMAT_KEY\",\"length\": \"LENGTH\",\"release date\": \"RELEASE_DATE\",\"rating\":\"RATING\"}"
+    curl -X PUT "http://ip-address/add_movie" -H "accept: application/json" -H "Content-Type: application/json" -H "username:admin" -H "password:foo" -d "{\"title\": \"THE_TITLE\",\"format\": \"FORMAT_KEY\",\"length\": \"LENGTH\",\"release date\": \"RELEASE_DATE\",\"rating\":\"RATING\"}"
     """
     username = request.headers['username']
     password = request.headers['password']
@@ -225,7 +225,7 @@ def update_movie(id):
 def add_movie():
     """
     Add a movie record
-    curl -X POST "http://192.168.42.6:5000/add_movie" -H "accept: application/json" -H "Content-Type: application/json" -H "username:admin" -H "password:foo" -d "{\"title\": \"THE_TITLE\",\"format\": \"FORMAT_KEY\",\"length\": \"LENGTH\",\"release date\": \"RELEASE_DATE\",\"rating\":\"RATING\"}"
+    curl -X POST "http://ip-address/add_movie" -H "accept: application/json" -H "Content-Type: application/json" -H "username:admin" -H "password:foo" -d "{\"title\": \"THE_TITLE\",\"format\": \"FORMAT_KEY\",\"length\": \"LENGTH\",\"release date\": \"RELEASE_DATE\",\"rating\":\"RATING\"}"
     """
     username = request.headers['username']
     password = request.headers['password']
