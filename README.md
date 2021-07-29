@@ -44,7 +44,11 @@ You should see something like this, make note of that IP address where it says "
  
 <img width="687" alt="Screen Shot 2021-07-29 at 8 47 24 AM" src="https://user-images.githubusercontent.com/2160448/127523572-f3699a5d-e1ae-4ab1-907d-d97449a5c372.png">
 
-In a seperate Terminal windo, one can interact with the local server vis curl
+In a seperate Terminal window, one can interact with the local server vis curl
+
+> curl -X GET "https://IP_ADDRESS/moviebucket" -H "username:admin" -H "password:foo"
+
+Endpoints for all four curl interactions are built but without a database hooked up to manage user and app data, all interactions will fail presently
 
 # Deploy to Production
 Initial Setup Per this Tutorial: https://medium.com/@abhishekmeena_68076/how-to-deploy-the-flask-django-app-on-aws-ec2-with-gunicorn-ngnix-with-free-ssl-certificate-566b2ada3b6a
