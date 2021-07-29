@@ -1,11 +1,9 @@
 import configparser
 from flask import Flask, request
 from flask_session import Session
-import logging
-import os
-import configparser
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+import logging
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
 
