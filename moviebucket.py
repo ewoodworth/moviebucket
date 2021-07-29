@@ -128,7 +128,7 @@ def create_app():
 def root():
     return("Welcome to the whole domain!")
 
-@app.route("/moviebucket")
+@app.route("/moviebucket", methods=['GET'])
 def moviebucket():
     return("Welcome to Moviebucket!")
 
@@ -192,34 +192,34 @@ def update_movie(id):
     response = dict(request.get_json())
     movie = Movie.query.filter_by(movie_id=id).first()
 
-    if movie.record_creator = user_id:
-        title = response['title']
-        format = response['format']
-        length = response['length']
-        release_date = response['release date']
-        rating = response['rating']
+    # if movie.record_creator = user_id:
+    title = response['title']
+    format = response['format']
+    length = response['length']
+    release_date = response['release date']
+    rating = response['rating']
 
-        # React forms would have these built in, and these would be secondary vallidations.
-        if 0 == len(title) or 50 < len(title):
-            return("Please try again with a title between 1 and 50 chars")
-        if format.lower() not in {'VHS','DVD','Streaming'}:
-            return("Please try again and enter one of 'DVD', 'VHS' or 'Streaming' for format")
-        if 0 == length or 500 < length:
-            return("Please try again with a length between 0 and 500")
-        if 1800 > int(release_date) or 2100 < int(release_date):
-            return("Please try again. Release year must be between 1800 and 2100")
-        if 1 >= int(rating) or 5 < int(rating):
-            return("Please try again with a rating between 1 and 5")
+    # React forms would have these built in, and these would be secondary vallidations.
+    if 0 == len(title) or 50 < len(title):
+        return("Please try again with a title between 1 and 50 chars")
+    if format.lower() not in {'VHS','DVD','Streaming'}:
+        return("Please try again and enter one of 'DVD', 'VHS' or 'Streaming' for format")
+    if 0 == length or 500 < length:
+        return("Please try again with a length between 0 and 500")
+    if 1800 > int(release_date) or 2100 < int(release_date):
+        return("Please try again. Release year must be between 1800 and 2100")
+    if 1 >= int(rating) or 5 < int(rating):
+        return("Please try again with a rating between 1 and 5")
 
-        # SQLAlchemy prevents injection attacks but I'm being a bit extra here:
-        movie.title = str(title)
-        movie.format = str(format)
-        movie.length = int(length)
-        movie.release_year = int(release_date)
-        db.session.commit()
-        return('Updated: %s' % movie)
-    else:
-        return ("Sorry, records can only be updated by their creator.")
+    # SQLAlchemy prevents injection attacks but I'm being a bit extra here:
+    movie.title = str(title)
+    movie.format = str(format)
+    movie.length = int(length)
+    movie.release_year = int(release_date)
+    db.session.commit()
+    return('Updated: %s' % movie)
+    # else:
+    #     return ("Sorry, records can only be updated by their creator.")
 
 @app.route("/add_movie", methods=['POST'])
 def add_movie():
