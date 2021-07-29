@@ -26,8 +26,11 @@ This leaves a lot of the code untested. Gnereally the data model as described sh
 Initial Setup Per this Tutorial: https://medium.com/@abhishekmeena_68076/how-to-deploy-the-flask-django-app-on-aws-ec2-with-gunicorn-ngnix-with-free-ssl-certificate-566b2ada3b6a
 
 - ssh to EC2 CLI
+ 
 > git pull
+
 > pip install -r requirements.txt
+
 > ansible-vault decrypt config.ini
 
 # The Stack What/Why
