@@ -17,6 +17,7 @@ e. Rating [integer; value between 1 and 5]
 
 ## Eventually
 1. Sophisitcated Authorization
+2. Dockerize the dev environment
 
 
 # Deploy to Production
