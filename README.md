@@ -50,6 +50,11 @@ In a seperate Terminal window, one can interact with the local server vis curl
 
 Endpoints for all four curl interactions are built but without a database hooked up to manage user and app data, all interactions will fail presently
 
+#### Non-existant unittests would be:
+- If user enters data that ought to fail validation; does it actually fail validation (via sqlalchemy unit testing)
+- If user tries to access data they shouldn't have access to, do those attempts fail? (via sqlalchemy unit testing)
+- One of the data inflow methods I proposed would take a mean of some fields in one column and  import them into a field in another table. Does it do the right math? (python unit testing)
+
 # Deploy to Production
 Initial Setup Per this Tutorial: https://medium.com/@abhishekmeena_68076/how-to-deploy-the-flask-django-app-on-aws-ec2-with-gunicorn-ngnix-with-free-ssl-certificate-566b2ada3b6a
 
